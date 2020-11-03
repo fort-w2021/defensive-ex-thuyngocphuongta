@@ -1,0 +1,10 @@
+## Geh weida, mi `lag`st!
+
+Die Funktion `lag()` (s.u.) gibt eine Version ihres Vektor-Inputs `x` zurück, die `n` Werte hinter dem Original beginnt und den Anfang mit `NA` auffüllt. Verbessern Sie `lag()` so, dass die Funktion  für ungeeignete *inputs* sinnvolle Fehler- oder Warnmeldungen ausgibt und sinnvolle Dinge 
+tut.  Schreiben Sie ein paar simple Testfälle um ihre Modifikationen zu überprüfen -- also für Listen-, Matrizen-, oder `data.frame`-förmige `x`, ungeeignete `lag`-Werte, ...
+```{r, lag-baddef}
+lag <- function(x, n = 1L) {
+  xlen <- length(x)
+  c(rep(NA, n), x[seq_len(xlen - n)])
+}
+```
