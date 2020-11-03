@@ -1,0 +1,25 @@
+## Denkst Du Defensiv Danken Dir Das Da Draußen Die Dudes.
+
+Alternativer Titel: *Being a Cunt about Counts*
+
+
+```{r, eval = FALSE}
+count_them <- function(supposedly_a_count) {
+  if (!checkmate::test_count(supposedly_a_count)) {
+    warning(
+      "rounding ", supposedly_a_count,
+      " to the nearest integer."
+    )
+    supposedly_a_count <- round(supposedly_a_count)
+  }
+  supposedly_a_count
+}
+```
+Wirkt harmlos und unscheinbar, oder? Zweck der effektiv drei Befehle hier drüber ist es, `supposedly_a_count` gegebenenfalls (mit einer Warnung) zu 
+einer Zählvariable, also einer nicht-negativen ganzen Zahl, zu runden
+so dass man sich im Folgenden darauf verlassen kann dass `supposedly_a_count` eben tatsächlich
+eine sinnvolle *Anzahl*  von irgendwas repräsentiert. 
+
+a) Identifizieren Sie möglichst viele der hier getroffenen *impliziten* Annahmen über das Objekt `supposedly_a_count`. (Am besten: *bevor* Sie sich die entsprechenden Tests im mitgelieferten Testfile anschauen.)
+
+b) Modifizieren Sie den Code so dass alle diese impliziten Annahmen mittels *expliziten* `assertions` überprüft werden, so dass immer entweder eine informative Fehlermeldung oder ein korrektes/vernünftiges Ergebnis (evtl. mit entsprechenden Warnmeldungen, s.o.) zurückgegeben wird.
