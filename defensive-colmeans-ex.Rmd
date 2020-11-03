@@ -1,0 +1,18 @@
+## Toll! Means!
+
+Hier geht es einmal mehr um *Defensives Denken* -- also darum, robuste Programme zu schreiben, die mögliche Probleme antizipieren und abprüfen um diese dann abzufangen und/oder
+informative, präzise Warn- oder Fehlermeldungen auszugeben.
+
+Modifizieren Sie die Funktion `col_means()` so, dass alle mitgelieferten Tests
+funktionieren oder zumindest hilfreiche Fehlermeldungen erzeugen. Benutzen Sie keine Zusatzpakete außer `checkmate`.
+
+```{r, col_means_exdef, eval=FALSE}
+# compute means of all numeric columns in df
+# output: a data.frame
+col_means <- function(df) {
+  numeric <- vapply(df, is.numeric, logical(1))
+  numeric_cols <- df[, numeric]
+
+  data.frame(lapply(numeric_cols, mean))
+}
+```
